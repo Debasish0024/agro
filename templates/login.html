@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriProphets - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1 data-translate-key="welcome">WELCOME TO AGRIPROPHETS</h1>
+        <div id="languageSelectContainer">
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="bn">Bengali</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+                <option value="kn">Kannada</option>
+                <option value="gu">Gujarati</option>
+            </select>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}" data-translate-key="home"><b>HOME</b></a></li>
+            <li><a href="{{ url_for('login') }}" data-translate-key="login"><b>LOGIN/SIGNUP</b></a></li>
+            <li><a href="{{ url_for('predict') }}" data-translate-key="predict"><b>PREDICT</b></a></li>
+            <li><a href="{{ url_for('report') }}" data-translate-key="report">REPORT</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h1 data-translate-key="login">Login</h1>
+        <form id="loginForm">
+            <label for="username" data-translate-key="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Username" required />
+            <label for="password" data-translate-key="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" required />
+            <button type="submit" data-translate-key="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="{{ url_for('register') }}" data-translate-key="registerButton">Register here</a>.</p>
+        
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

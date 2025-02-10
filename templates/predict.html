@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriProphets - Predict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1 data-translate-key="welcome">WELCOME TO AGRIPROPHETS</h1>
+        <div id="languageSelectContainer">
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="bn">Bengali</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+                <option value="kn">Kannada</option>
+                <option value="gu">Gujarati</option>
+            </select>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}" data-translate-key="home"><b>HOME</b></a></li>
+            <li><a href="{{ url_for('login') }}" data-translate-key="login"><b>LOGIN/SIGNUP</b></a></li>
+            <li><a href="{{ url_for('predict') }}" data-translate-key="predict"><b>PREDICT</b></a></li>
+            <li><a href="{{ url_for('report') }}" data-translate-key="report">REPORT</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h1 data-translate-key="predict">Predict</h1>
+        <form id="predictForm">
+            <label for="crop_name" data-translate-key="crop_name">Crop Name:</label>
+            <input type="text" id="crop_name" name="crop_name" placeholder="Crop Name" required />
+            <label for="fertilizer_price" data-translate-key="fertilizer_price">Fertilizer Price:</label>
+            <input type="number" id="fertilizer_price" name="fertilizer_price" placeholder="Fertilizer Price" required />
+            <label for="petrol_price" data-translate-key="petrol_price">Petrol Price:</label>
+            <input type="number" id="petrol_price" name="petrol_price" placeholder="Petrol Price" required />
+            <button type="submit" data-translate-key="submit">Submit</button>
+        </form>
+        <div id="message" data-translate-key="message"></div>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

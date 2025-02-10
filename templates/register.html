@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriProphets - Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1 data-translate-key="welcome">WELCOME TO AGRIPROPHETS</h1>
+        <div id="languageSelectContainer">
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="bn">Bengali</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+                <option value="kn">Kannada</option>
+                <option value="gu">Gujarati</option>
+            </select>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}" data-translate-key="home"><b>HOME</b></a></li>
+            <li><a href="{{ url_for('login') }}" data-translate-key="login"><b>LOGIN/SIGNUP</b></a></li>
+            <li><a href="{{ url_for('predict') }}" data-translate-key="predict"><b>PREDICT</b></a></li>
+            <li><a href="{{ url_for('report') }}" data-translate-key="report">REPORT</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h1 data-translate-key="register">Register</h1>
+        <form id="registerForm">
+            <label for="username" data-translate-key="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Username" required />
+            <label for="name" data-translate-key="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Name" required />
+            <label for="location" data-translate-key="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Location" required />
+            <label for="email" data-translate-key="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required />
+            <label for="phone" data-translate-key="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
+            <label for="password" data-translate-key="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" required />
+            <label for="confirm_password" data-translate-key="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirmPassword" placeholder="Confirm Password" required />
+            <button type="submit" data-translate-key="registerButton">Register</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}" data-translate-key="login">Login here</a>.</p>
+        
+    </main>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
